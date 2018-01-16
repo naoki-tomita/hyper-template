@@ -7,9 +7,13 @@
     "@hyperapp/html": "^1.0.1",
     "@hyperapp/router": "^0.4.1",
     "@types/webpack": "^3.8.2",
+    "chokidar-cli": "^1.2.0",
+    "cpx": "^1.5.0",
     "hyperapp": "^1.0.1",
     "local-web-server": "^2.3.0",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.10.2",
+    "trash-cli": "^1.4.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.4.2",
@@ -17,6 +21,14 @@
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "fix": "prettier -l --write \"*.{ts,tsx}\" \"{src,tools,__tests__}/**/*.{ts,tsx}\""
+    "fix": "prettier -l --write \"*.{ts,tsx}\" \"{src,tools,__tests__}/**/*.{ts,tsx}\"",
+    "build": "run-p build:*",
+    "build:ts": "webpack",
+    "build:html": "cpx \"./src/apps/*.html\" \"./dist\"",
+    "clean": "trash ./dist",
+    "watch:ts": "chokidar \"./src/script/**/*.ts*\" -c \"run-s build:ts\"",
+    "watch:html": "chokidar \"./src/apps/*.html\" -c \"run-s build:html\"",
+    "prestart": "run-s build",
+    "start": "run-p watch"
   }
 }
