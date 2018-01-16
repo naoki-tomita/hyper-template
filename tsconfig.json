@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "strictNullChecks": true,
+    "lib": ["es2017", "dom"]
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "vendor"]
+}

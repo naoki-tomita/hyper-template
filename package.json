@@ -1,0 +1,22 @@
+{
+  "name": "hyper-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@hyperapp/html": "^1.0.1",
+    "@hyperapp/router": "^0.4.1",
+    "@types/webpack": "^3.8.2",
+    "hyperapp": "^1.0.1",
+    "local-web-server": "^2.3.0",
+    "prettier": "^1.10.2",
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.4.2",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "fix": "prettier -l --write \"*.{ts,tsx}\" \"{src,tools,__tests__}/**/*.{ts,tsx}\""
+  }
+}
